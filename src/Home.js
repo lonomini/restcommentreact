@@ -13,7 +13,7 @@ export default function Home() {
   const location = useLocation()
 
     useEffect(()=>{
-      axios.get("http://localhost:5000/",{
+      axios.get("https://restcommentexpress.onrender.com/",{
         headers: {
           "username": sessionStorage.getItem("name") || null,
           "token": sessionStorage.getItem("token") || null

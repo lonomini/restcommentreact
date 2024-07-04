@@ -16,14 +16,14 @@ export default function Detail(prop) {
     let [star, setStar] = useState(1)
 
     function loadComment(){
-      axios.get("http://localhost:5000/comment/"+params.id)
+      axios.get("https://restcommentexpress.onrender.com/comment/"+params.id)
       .then((data)=>{
           setComments(data.data)
       });
     }
 
     function loadRating(){
-      axios.get("http://localhost:5000/shop/"+params.id).then( (data) => {
+      axios.get("https://restcommentexpress.onrender.com/shop/"+params.id).then( (data) => {
         setDetails(data.data[0])
         let star = Math.round(data.data[0].rating);
         setStar(star);
@@ -31,13 +31,13 @@ export default function Detail(prop) {
     }
 
     useEffect(()=>{
-        axios.get("http://localhost:5000/shop/"+params.id).then( (data) => {
+        axios.get("https://restcommentexpress.onrender.com/shop/"+params.id).then( (data) => {
             setDetails(data.data[0])
             let star = Math.round(data.data[0].rating);
             setStar(star);
           }).catch(err => setMessage("Connection fail."));
 
-        axios.get("http://localhost:5000/comment/"+params.id)
+        axios.get("https://restcommentexpress.onrender.com/comment/"+params.id)
         .then((data)=>{
             setComments(data.data)
         }).catch(err => setMessage("Connection fail."));
@@ -46,7 +46,7 @@ export default function Detail(prop) {
 
 
   function handlePostComment(title, text,rate){
-    axios.post("http://localhost:5000/addComment", {
+    axios.post("https://restcommentexpress.onrender.com/addComment", {
       rest_id: params.id,
       title: title,
       comment: text,

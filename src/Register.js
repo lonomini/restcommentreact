@@ -14,7 +14,7 @@ export default function Register(prop) {
   function handleSubmit(e){
     e.preventDefault();
 
-    axios.post("http://localhost:5000/register", {
+    axios.post("https://restcommentexpress.onrender.com/register", {
       username: userName, 
       password: password
     }).then(data=>{
