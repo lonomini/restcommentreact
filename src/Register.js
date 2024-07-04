@@ -40,7 +40,7 @@ export default function Register(prop) {
             </div>
             <div className={Style.form_field}>
                 <label htmlFor="password">Password:<p>(6-12 letters)</p></label>
-                <input type='type' name='password' minLength={6} maxLength={12} id='password' required
+                <input type='password' name='password' minLength={6} maxLength={12} id='password' required
                 onChange={e=>setPassword(e.target.value)} />
             </div>
             <div className={Style.form_field}>
