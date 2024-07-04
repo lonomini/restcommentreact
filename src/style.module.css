@@ -1,0 +1,301 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(244, 244, 146);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* icon */
+
+.material_icons {
+    font-family: 'Material Icons';
+    font-weight: bold;
+    font-style: normal;
+    font-size: 18px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    color: rgb(244, 141, 31);
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+/* header */
+
+header{    
+    position: fixed;
+    top:0px;
+    left:0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(205, 228, 233), rgb(74, 199, 241))   ;
+    height: 100px;
+    width: 100%;
+}
+header span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    color: rgb(22, 185, 111);
+    text-decoration: underline;
+}
+nav{
+    display: flex;
+    justify-content: right;
+}
+nav span{
+    align-self: left;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    padding: 10px;
+}
+nav ul li{
+    padding: 20px 10px;
+    margin: 10px;
+    min-width: 100px;
+    text-align: center;
+    background-color: rgb(167, 166, 166);
+    transition: all 0.5s;
+}
+nav ul li:hover{
+    background-color: rgb(20, 16, 16);
+}
+nav ul li:hover a{
+    color: white
+}
+nav ul li a{
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.mobile{
+    display: none;
+}
+
+.mobilenav{
+    background: black;
+    opacity: 90%;
+    position:fixed;
+    top: 100px;
+    left: 0px;
+    width:100%;
+}
+.mobilenav ul li{
+    padding: 10px 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+.mobilenav ul li a{
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+/* content*/
+
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245, 224, 90);
+    border: solid 1px;
+    width: 800px;
+    margin-top: 110px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+.rest_list{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    border: solid 2px;
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: orange;
+    transition: all 0.3s;
+}
+.rest_list img{
+    width: 100px;
+    height: 80px;
+    margin-right: 20px;
+}
+.rest_list:hover{
+    background-color: rgb(236, 240, 111);
+}
+.rest_list a{
+    text-decoration: none;
+}
+.rest_list span{
+    font-size: 12px;
+    margin-left: 10px;
+    font-weight: lighter;
+}
+/* form css */
+.forms{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: auto auto;
+}
+.forms h2{
+    align-self: center;
+    text-decoration: underline;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+}
+.form_field{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 40px;
+    margin: 10px;
+}
+.form_field input{
+    padding: 5px 10px;
+    height: 25px;
+    font-size: 20px;
+}
+.form_field label{
+    font-size: 20px;
+}
+.form_field label p{
+    font-size: 14px;
+    color: red;
+}
+.form_field button{
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+}
+.message{
+    color: red;
+}
+
+/* restaurant detail */
+.rest_detail{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.rest_detail img{
+    width: 150px;
+    height: 120px;
+}
+.rest_detail h2{
+    color: rgb(235, 122, 16);
+}
+/* write comment */
+.comment_heading{
+    width: 80%;
+    height: 25px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    padding: 3px 5px;
+    background-color: rgb(219, 241, 241);
+}
+textarea{
+    width: 80%;
+    height: 100px;
+    min-width: 300px;
+    font-weight: bold;
+    padding: 3px 5px;
+    background-color: rgb(219, 241, 241);
+}
+.postcomment{
+    box-sizing: border-box;
+    background-color: rgb(164, 220, 239);
+    padding: 10px;
+}
+.postcomment button{
+    margin: 5px 0px;
+    width: 50px;
+    height: 25px;
+}
+
+/* comment */
+.view_comment{
+    padding: 10px 5px;
+    border-bottom: solid 1px;
+}
+.view_comment .comment_info{
+    font-size: 12px;
+    color: rgb(127, 124, 124);
+}
+.view_comment .comment_info span{
+    margin-right: 10px;
+}
+.view_comment .comment_content{
+    box-sizing: border-box;
+    background-color: rgb(244, 244, 182);
+    border-radius: 5px;
+    min-height: 50px;
+    margin: 3px 0;
+    padding: 10px;
+    color: rgb(161, 108, 10)
+}
+
+
+@media only screen and (max-width: 600px ) {
+    header{
+        justify-content:space-between;
+    }
+    .content{
+        width: 100%;
+        margin-top: 110px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        border: none;
+    }
+    .rest_list{
+        width: 100%;
+        margin: 5px 0;
+        padding: 5px 0;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: flex;
+    }
+    /* form css */
+    .forms{
+        width: 100%;
+    }
+    .form_field{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .form_field input{
+        padding: 5px 10px;
+        height: 25px;
+        font-size: 20px;
+        border: solid 1px;
+        border-radius: 20px;
+    }
+}
