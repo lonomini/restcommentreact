@@ -3,17 +3,18 @@ import { useEffect, useState } from "react";
 import axios from 'axios';
 import Restaurant from "./Restaurant.js";
 import { useLocation } from 'react-router-dom';
+import Server from './Server.js';
 
 import Style from './style.module.css';
 
 export default function Home() {
-
+console.log(Server)
   let [Restlist, setRestlist] = useState([])
   let [message, setMessage]     = useState()
   const location = useLocation()
 
     useEffect(()=>{
-      axios.get("https://restcommentexpress.onrender.com/",{
+      axios.get(Server,{
         headers: {
           "username": sessionStorage.getItem("name") || null,
           "token": sessionStorage.getItem("token") || null

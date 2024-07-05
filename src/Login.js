@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios';
 import { Navigate, useLocation } from 'react-router-dom';
+import Server from './Server.js';
 
 import Style from './style.module.css';
 
@@ -13,7 +14,7 @@ export default function Login(prop) {
   function handleLogin(e){
     e.preventDefault();
 
-    axios.post("https://restcommentexpress.onrender.com/login", {
+    axios.post(Server+"login", {
       username: userName, 
       password: password
     }).then(data=>{

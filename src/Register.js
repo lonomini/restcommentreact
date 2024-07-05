@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
+import Server from './Server.js';
 
 import Style from './style.module.css';
 
@@ -14,7 +15,7 @@ export default function Register(prop) {
   function handleSubmit(e){
     e.preventDefault();
 
-    axios.post("https://restcommentexpress.onrender.com/register", {
+    axios.post(Server+"register", {
       username: userName, 
       password: password
     }).then(data=>{

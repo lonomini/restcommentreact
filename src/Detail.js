@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 
 import PostComment from "./PostComment.js";
 import Comment from './Comment.js';
+import Server from './Server.js';
 
 import Style from './style.module.css';
 
@@ -16,14 +17,14 @@ export default function Detail(prop) {
     let [star, setStar] = useState(1)
 
     function loadComment(){
-      axios.get("https://restcommentexpress.onrender.com/comment/"+params.id)
+      axios.get(Server+"comment/"+params.id)
       .then((data)=>{
           setComments(data.data)
       });
     }
 
     function loadRating(){
-      axios.get("https://restcommentexpress.onrender.com/shop/"+params.id).then( (data) => {
+      axios.get(Server+"shop/"+params.id).then( (data) => {
         setDetails(data.data[0])
         let star = Math.round(data.data[0].rating);
         setStar(star);
@@ -31,13 +32,13 @@ export default function Detail(prop) {
     }
 
     useEffect(()=>{
-        axios.get("https://restcommentexpress.onrender.com/shop/"+params.id).then( (data) => {
+        axios.get(Server+"shop/"+params.id).then( (data) => {
             setDetails(data.data[0])
             let star = Math.round(data.data[0].rating);
             setStar(star);
           }).catch(err => setMessage("Connection fail."));
 
-        axios.get("https://restcommentexpress.onrender.com/comment/"+params.id)
+        axios.get(Server+"comment/"+params.id)
         .then((data)=>{
             setComments(data.data)
         }).catch(err => setMessage("Connection fail."));
@@ -46,7 +47,7 @@ export default function Detail(prop) {
 
 
   function handlePostComment(title, text,rate){
-    axios.post("https://restcommentexpress.onrender.com/addComment", {
+    axios.post(Server+"addComment", {
       rest_id: params.id,
       title: title,
       comment: text,
